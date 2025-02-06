@@ -21,27 +21,22 @@
 				<a href="#">Bankist</a>
 			</div>
 			<ul class="navbar__menu">
-				<li><a href="#">Home</a></li>
 				<li><a href="#">Transactions</a></li>
-				<li><a href="#">Settings</a></li>
+				<li><a href="./credit.html">Get Credit</a></li>
 			</ul>
 			<div class="navbar__user">
-				<!-- Profile image will be shown here -->
 				<img id="profileImage" src="" alt="Profile" class="navbar__profile-img" />
 				<span id="ownerName"></span>
 				<button id="logoutBtn">Log Out</button>
 			</div>
-	</div>
-	</nav>
+		</nav>
 	</div>
 	<div class="dashboard-container">
-		<!-- Dashboard Section -->
 		<div class="dashboard">
 			<h1>Welcome, <span id="welcomeOwner"></span></h1>
 			<p>Your balance: $<span id="balance"></span></p>
 		</div>
 
-		<!-- Transactions Section -->
 		<div class="transactions">
 			<h2>Manage Transactions</h2>
 			<div class="input-group">
@@ -56,10 +51,12 @@
 		<div class="transaction-controls">
 			<input type="text" id="searchInput" placeholder="Search transactions..." class="search-input" />
 			<div class="sort-controls custom-select">
+				<button id="exportBtn" class="export-btn">Export Transactions</button>
+				<a id="csvDownloadLink" style="display: none;"></a>
 				<select id="mySelect">
 					<option value="" disabled selected>Choose</option>
-					<option value="0" id="sortByDate">Sort by Date</option>
-					<option value="1" id="sortByAmount">Sort by Amount</option>
+					<option value="date" id="sortByDate">Sort by Date</option>
+					<option value="amount" id="sortByAmount">Sort by Amount</option>
 				</select>
 			</div>
 		</div>

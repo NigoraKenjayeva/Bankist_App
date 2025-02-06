@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-/* General styles */
+
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #f4f7fc; /* Light background */
+	background-color: #f4f7fc;
 	font-family: 'Poppins', sans-serif;
 }
 
 h1,
 p {
-	color: #ecf0f1; /* Light gray text color */
+	color: #ecf0f1;
 }
 ::-webkit-scrollbar {
 	width: 6px;
@@ -28,7 +28,7 @@ p {
 /* Navbar styles */
 .navbar {
 	background: linear-gradient(135deg, #37721e, #2a983c);
-	color: #ecf0f1; /* Light gray text color */
+	color: #ecf0f1;
 }
 .navbar__nav {
 	padding: 20px 40px;
@@ -40,7 +40,7 @@ p {
 	font-size: 24px;
 	font-weight: bold;
 	text-decoration: none;
-	color: #ecf0f1; /* Light gray for logo */
+	color: #ecf0f1;
 }
 
 .navbar__menu {
@@ -54,7 +54,7 @@ p {
 }
 
 .navbar__menu a {
-	color: #ecf0f1; /* Light gray for menu items */
+	color: #ecf0f1;
 	text-decoration: none;
 	font-size: 16px;
 }
@@ -67,10 +67,10 @@ p {
 
 /* Profile image style */
 .navbar__profile-img {
-	width: 40px; /* Adjust the size of the image */
+	width: 40px;
 	height: 40px;
-	border-radius: 50%; /* Makes the image circular */
-	object-fit: cover; /* Ensures the image doesn't get distorted */
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .navbar__user span {
@@ -80,7 +80,7 @@ p {
 /* Button styles */
 button {
 	padding: 8px 16px;
-	background-color: #3498db; /* Light blue for buttons */
+	background-color: #218838;
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -88,15 +88,11 @@ button {
 	font-size: 14px;
 }
 
-button:hover {
-	background-color: #2980b9; /* Darker blue on hover */
-}
-
 /* Dashboard styles */
 .dashboard {
 	padding: 40px;
 	margin-top: 20px;
-	background-color: #ecf0f1; /* Light gray background for dashboard */
+	background-color: #ecf0f1;
 	border-radius: 8px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	width: 100%;
@@ -106,18 +102,14 @@ button:hover {
 
 .dashboard h1 {
 	font-size: 24px;
-	color: #2c3e50; /* Dark text color for title */
+	color: #2c3e50;
 }
 
 .dashboard p {
 	font-size: 20px;
 	font-weight: bold;
-	color: #2c3e50; /* Dark text color for balance */
+	color: #2c3e50;
 }
-/* Responsive Design */
-
-/* Transitions */
-/* Transactions Section */
 .transactions {
 	max-width: 500px;
 	margin: 20px;
@@ -176,18 +168,15 @@ button:hover {
 	background-color: #c82333;
 }
 
-/* Transactions History */
-/* Dashboard Container */
 .dashboard-container {
-	max-width: 1200px; /* Maksimal kenglik */
-	margin: 0 auto; /* O‘rtaga joylash */
+	max-width: 1200px;
+	margin: 0 auto;
 	padding: 20px;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr); /* 2 ta ustun */
+	grid-template-columns: repeat(2, 1fr); 
 	gap: 30px;
 }
 
-/* Dashboard va Transactions uchun umumiy stil */
 .dashboard,
 .transactions {
 	background: #ffffff;
@@ -195,7 +184,7 @@ button:hover {
 	border-radius: 8px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	text-align: center;
-	min-height: 150px; /* Bir xil bo'lishi uchun */
+	min-height: 150px; 
 }
 
 /* Dashboard Header */
@@ -391,7 +380,7 @@ select option:hover {
 /* Responsivlik */
 @media (max-width: 900px) {
 	.dashboard-container {
-		grid-template-columns: 1fr; /* Mobil qurilmalar uchun 1 ta ustun */
+		grid-template-columns: 1fr;
 	}
 }
 

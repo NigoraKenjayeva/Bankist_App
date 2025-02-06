@@ -1,4 +1,3 @@
-
 window.addEventListener("DOMContentLoaded", () => {
 	const profileImage = document.getElementById('profileImage')
 	const ownerName = document.getElementById('ownerName')
@@ -11,8 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	const transactionList = document.getElementById('transactionList')
 	const searchInput = document.getElementById('searchInput')
 	const select = document.getElementById('mySelect')
+	const exportBtn = document.getElementById('exportBtn')
 
-	
 
 	const account = JSON.parse(localStorage.getItem('currentUser'))
 
@@ -48,9 +47,9 @@ window.addEventListener("DOMContentLoaded", () => {
 				text: "Not enough balance!",
 				duration: 2000,
 				close: true,
-				gravity: "top", // yuqorida ko'rsatish
-				position: "center", // o'ng tomonda
-				backgroundColor: "red", // red gradient
+				gravity: "top",
+				position: "center",
+				backgroundColor: "red",
 			}).showToast()
 			return
 		}
@@ -61,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		upDateUi()
 	}
 
-	const upDateUi = (filteredTransaction=account.transactions) => {
+	const upDateUi = (filteredTransaction = account.transactions) => {
 		balance.textContent = account.balance.toFixed(2)
 
 		transactionList.innerHTML = ''
@@ -128,19 +127,62 @@ window.addEventListener("DOMContentLoaded", () => {
 		const filteredTransaction = account.transactions.filter((filter) => {
 			const type = filter.type.toLowerCase().includes(searchTerm)
 			const date = filter.date.toLowerCase().includes(searchTerm)
-			const amount=String(filter.amount).toLowerCase().includes(searchTerm)
+			const amount = String(filter.amount).toLowerCase().includes(searchTerm)
 			return type || date || amount
 		})
 		upDateUi(filteredTransaction)
 
 	})
-	select.addEventListener('click',()=>{
-		console.log(select.value);
-		
+	select.addEventListener('click', () => {
+		const selectedValue = select.value
+		if (selectedValue === "date") {
+			account.transactions.sort((a, b) => {
+				return new Date(b.date).getTime() - new Date(a.date).getTime()
+			})
+		} else if (selectedValue === "amount") {
+			account.transactions.sort((a, b) => {
+				return b.amount - a.amount
+			})
+		}
+		upDateUi()
 	})
-	logoutBtn.addEventListener('click',()=>{
+
+	exportBtn.addEventListener('click', () => {
+		const transactions = account.transactions
+		if (transactions.length > 0) {
+			let csvContent = "Date,Type,Amount,Currency\n"
+			transactions.forEach((tr) => {
+				csvContent += `${tr.date},${tr.type},${tr.amount},USD\n`
+
+				const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
+				const url = URL.createObjectURL(blob)
+
+				const downloadLink = document.getElementById('csvDownloadLink')
+				downloadLink.href = url
+				downloadLink.download = "transactions.csv"
+				document.body.appendChild(downloadLink)
+				downloadLink.click()
+				document.body.removeChild(downloadLink)
+
+				setTimeout(() => URL.revokeObjectURL(url), 5000)
+				window.location.reload()
+			})
+		} else {
+			Toastify({
+				text: "No transactions to export",
+				duration: 2000,
+				close: true,
+				gravity: "top",
+				position: "center",
+				backgroundColor: "red",
+			}).showToast()
+		}
+
+	})
+
+	logoutBtn.addEventListener('click', () => {
 		localStorage.removeItem('currentUser')
-		window.location.href="../index.html"
+		window.location.href = "../index.html"
 	})
 	upDateUi()
 })
