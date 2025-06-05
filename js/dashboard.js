@@ -177,7 +177,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				backgroundColor: "red",
 			}).showToast()
 		}
-
+ 
 	})
 
 	logoutBtn.addEventListener('click', () => {
