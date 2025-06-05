@@ -1,35 +1,31 @@
 const accounts = [
     {
-        owner: 'Sardorbek',
+        owner: 'Kim Namjoon',
         ownerImage: '../img/sardorbek.jpg',
-        userName: "SS2003",
-        password: "root123",
-        balance: 5000,
+        userName: "leader",
+        password: "leader123",
+        balance: 30000,
         transactions: []
     },
     {
-        owner: 'Sarvarbek',
+        owner: 'Kim Seokjin',
         ownerImage: '../img/banker.jpg',
-        userName: "ST212",
-        password: "st123",
-        balance: 8000,
+        userName: "vocalist",
+        password: "vocalist123",
+        balance: 28000,
         transactions: []
     }
 ]
-
 const loginBtn = document.querySelector('.login-btn')
 const inputUser = document.querySelector('#username')
 const inputPin = document.querySelector('#password')
-
 loginBtn.addEventListener('click', (e) => {
     e.preventDefault()
     const username = inputUser.value.trim().toLowerCase()
     const pin = inputPin.value.trim()
-
     const accountFind = accounts.find(
         account => account.userName.toLowerCase() === username && account.password === pin
     )
-
     if (accountFind) {
         Toastify({
             text: "Login successful!",
@@ -56,4 +52,3 @@ loginBtn.addEventListener('click', (e) => {
         }).showToast()
     }
 })
-
