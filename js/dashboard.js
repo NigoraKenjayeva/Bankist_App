@@ -99,7 +99,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				close: true,
 				gravity: "top",
 				position: "center",
-				backgroundColor: "red", // Green gradient
+				backgroundColor: "red", 
 			}).showToast()
 		}
 		amountInput.value = ''
@@ -116,7 +116,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				close: true,
 				gravity: "top",
 				position: "center",
-				backgroundColor: "red", // Green gradient
+				backgroundColor: "red", 
 			}).showToast()
 		}
 		amountInput.value = ''
