@@ -1,7 +1,7 @@
 const accounts = [
     {
         owner: 'Kim Namjoon',
-        ownerImage: '../img/sardorbek.jpg',
+        ownerImage: './images/leader.jpg',
         userName: "leader",
         password: "leader123",
         balance: 30000,
@@ -9,7 +9,7 @@ const accounts = [
     },
     {
         owner: 'Kim Seokjin',
-        ownerImage: '../img/banker.jpg',
+        ownerImage: './images/vocalist.jpg',
         userName: "vocalist",
         password: "vocalist123",
         balance: 28000,
