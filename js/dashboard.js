@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	const account = JSON.parse(localStorage.getItem('currentUser'))
 
 	if (account) {
-		profileImage.src = account.ownerImage || './images/default.png'
+		profileImage.src = account.ownerImage || '../images/default.png'
 		ownerName.textContent = account.owner || 'User'
 		welcomeownerName.textContent = account.owner || 'User'
 		balance.textContent = account.balance.toFixed(2) || '0'
